@@ -4,11 +4,12 @@
 
 This repository contains an automated **API regression test suite** built with **Postman** and executed via **Newman** against the public **Postman Echo** API.
 
-The goal of this project is to demonstrate how to:
+The purpose of this project is to demonstrate:
 
-- Design reusable API tests in **Postman**
-- Run them automatically with **Newman** on the command line
-- Integrate them into **GitHub Actions CI** so tests run on every push
+- Designing reusable and maintainable API tests in **Postman**
+- Running tests automatically via **Newman CLI**
+- Integrating API tests into **CI/CD (GitHub Actions)**
+- Validating both **positive and negative API scenarios**
 
 ---
 
@@ -35,4 +36,25 @@ postman-newman-api-regression-tests/
 │  └─ workflows/
 │     └─ newman-ci.yml   # GitHub Actions CI pipeline
 └─ README.md
+
+
+---
+
+## 🧪 Test Coverage
+
+This suite includes **positive** and **negative** API tests.
+
+---
+
+### ✅ **Positive Tests**
+
+#### **1. GET Echo**
+- `GET {{baseUrl}}/get?test=123`
+- Verifies HTTP `200`
+- Confirms returned query parameter `test=123`
+
+#### **2. POST Echo**
+- Sends JSON:
+  ```json
+  { "name": "Satendra", "role": "QA Engineer" }
 
